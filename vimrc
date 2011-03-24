@@ -1,18 +1,19 @@
 set nocompatible
 
 " let $VIMRUNTIME="~/.vim_joelhy/"
-set runtimepath=~/.vim_joelhy,$VIMRUNTIME
+set runtimepath=~/.vim_joelhy,~/.vim_joelhy/doc/php-manual,$VIMRUNTIME
 
 set background=dark
 set fileencodings=utf-8,gbk,ucs-bom,cp936
 set incsearch  " Incremental search
 
-set tabstop=4  " 制表符的宽度
-set shiftwidth=4  "缩进的空格数
-set expandtab  " 在缩进和遇到Tab键时使用空格替代
+set tabstop=4  " How many columns a tab counts for
+set shiftwidth=4  " How many columns an indent counts for
+set expandtab  " Insert spaces when hitting Tab in insert mode
+set number  " show line number
 
 
-" PHP 代码完成
+" PHP code autocomplete
 filetype plugin on
 au FileType php set omnifunc=phpcomplete#CompletePHP
 
@@ -35,6 +36,9 @@ autocmd FileType php noremap <C-M> :w!<CR>:!/usr/bin/php %<CR>
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR>
+
+" PHP manual support
+autocmd BufNewFile,Bufread *.inc,*.tpl,*.php set keywordprg="help"
 
 " C-style indent
 set cindent
