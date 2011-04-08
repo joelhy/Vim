@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo -n "\n\033[34m"
+sed -n "/ $1(/, /\*/ p" ~/.vim_joelhy/doc/php_manual.txt | grep -v '*' 
+echo -n "\033[0m"
+
