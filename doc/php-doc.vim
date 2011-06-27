@@ -79,7 +79,7 @@ let g:pdv_cfg_Type = "mixed"
 let g:pdv_cfg_Package = ""
 let g:pdv_cfg_Version = "$id$"
 let g:pdv_cfg_Author = "黄景祥(Joel Huang) <joelhy@gmail.com>"
-let g:pdv_cfg_Copyright = "Copyright (C) 2011-Present, Baiduchuan Technologies, Inc."
+let g:pdv_cfg_Copyright = "1997-2005 The PHP Group"
 let g:pdv_cfg_Since =strftime("%Y-%m-%d %H:%M:%S")
 
 " TOB: let g:pdv_cfg_Type = "mixed"

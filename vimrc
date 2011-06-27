@@ -1,7 +1,8 @@
 set nocompatible
 set runtimepath=~/.vim_joelhy,$VIMRUNTIME
-set background=dark             " Assume a dark background
 set fileencodings=ucs-bom,utf-8,gbk
+set background=dark             " Assume a dark background
+syntax on
 
 " Enable pathogen bundles
 filetype off
@@ -29,12 +30,6 @@ let php_parent_error_open=1     " highlighting if there exists an open ( or [ wi
 
 " PHP parser check (CTRL-L)
 autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
-
-" PHP manual support
-"autocmd BufNewFile,Bufread *.inc,*.tpl,*.php set keywordprg="help"
-" Make sure help set properly for PHP files
-"autocmd FileType php set kp=:help
-autocmd FileType php set keywordprg=~/.vim_joelhy/doc/php_man
 
 " PHPDOC support
 function! PhpDocLoad()
