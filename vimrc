@@ -75,7 +75,7 @@ let Tlist_Close_On_Select = 1
 let Tlist_Process_File_Always = 1
 let Tlist_Display_Prototype = 0
 let Tlist_Display_Tag_Scope = 1
-let s:tlist_def_php_settings = 'php;c:class;f:function'
+let tlist_php_settings = 'php;c:class;f:function'
 
 " NERDTree options
 let NERDChristmasTree=1
@@ -88,4 +88,10 @@ let NERDTreeQuitOnOpen=1
 "map <Leader>n :NERDTree<CR>
 map <Leader>n :NERDTreeToggle<CR>
 "map <F10> :NERDTreeToggle<CR>
+
+
+
+" fold codes
+set foldmethod=syntax
+set foldlevel=100
 
