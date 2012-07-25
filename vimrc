@@ -31,6 +31,12 @@ let php_parent_error_open=1     " highlighting if there exists an open ( or [ wi
 " PHP parser check (CTRL-L)
 autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
 
+" do syntax checks when buffers are first loaded as
+" well as on saving 
+let g:syntastic_check_on_open=1
+" automatically open or close error window
+let g:syntastic_auto_loc_list=1
+
 " PHPDOC support
 function! PhpDocLoad()
     so ~/.vim_joelhy/doc/php-doc.vim
