@@ -4,6 +4,7 @@ set fileencodings=ucs-bom,utf-8,gbk
 set background=dark             " Assume a dark background
 syntax on
 
+
 " Enable pathogen bundles
 filetype off
 call pathogen#runtime_append_all_bundles()
@@ -12,6 +13,10 @@ call pathogen#helptags()
 " Turn on filetype plugins
 filetype plugin on
 filetype plugin indent on
+
+" set file types
+au BufNewFile,BufRead *.lbi set filetype=php
+au BufNewFile,BufRead *.dwt set filetype=php
 
 let mapleader = ","
 
