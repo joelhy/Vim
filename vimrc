@@ -41,6 +41,9 @@ autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
 let g:syntastic_check_on_open=1
 " automatically open or close error window
 let g:syntastic_auto_loc_list=1
+let g:syntastic_phpcs_disable=1
+"set tab width to 4, coding standard to CodeIgniter
+"let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
 
 " PHPDOC support
 function! PhpDocLoad()
