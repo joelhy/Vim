@@ -4,6 +4,9 @@ set fileencodings=ucs-bom,utf-8,gbk
 set background=dark             " Assume a dark background
 syntax on
 
+set rtp+=/usr/share/go/misc/vim
+
+colorscheme evening
 
 " Enable pathogen bundles
 filetype off
@@ -108,4 +111,15 @@ map <Leader>n :NERDTreeToggle<CR>
 " fold codes
 set foldmethod=syntax
 set foldlevel=100
+
+
+:nnoremap <F5> "=strftime("@since %Y-%m-%d %H:%M:%S")<CR>P
+:inoremap <F5> <C-R>=strftime("@since %Y-%m-%d %H:%M:%S")<CR>
+
+" code fold settings
+set foldmethod=indent
+set foldignore=
+
+set smartcase
+
 
