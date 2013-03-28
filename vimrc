@@ -120,6 +120,10 @@ set foldlevel=100
 set foldmethod=indent
 set foldignore=
 
+
+" search settings
+set incsearch
+set ignorecase
 set smartcase
 
 
