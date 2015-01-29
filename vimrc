@@ -1,21 +1,59 @@
 set nocompatible
-set runtimepath=~/.vim_joelhy,$VIMRUNTIME
+filetype off
+
 set fileencodings=ucs-bom,utf-8,gbk
 set background=dark             " Assume a dark background
 syntax on
-
-set rtp+=/usr/share/go/misc/vim
-
 colorscheme evening
 
-" Enable pathogen bundles
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" Turn on filetype plugins
-filetype plugin on
-filetype plugin indent on
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'scrooloose/syntastic'
+Plugin 'plasticboy/vim-markdown'
+
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'taglist.vim'
+
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+" Plugin 'user/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put non-Plugin stuff after this line
 
 " set file types
 au BufNewFile,BufRead *.lbi set filetype=php
@@ -50,7 +88,7 @@ let g:syntastic_phpcs_disable=1
 
 " PHPDOC support
 function! PhpDocLoad()
-    so ~/.vim_joelhy/doc/php-doc.vim
+    so ~/.vim/doc/php-doc.vim
     inoremap <leader>pd <ESC>:call PhpDocSingle()<CR>i
     nnoremap <leader>pd :call PhpDocSingle()<CR>
     vnoremap <leader>pd :call PhpDocRange()<CR>
@@ -98,7 +136,7 @@ let tlist_php_settings = 'php;c:class;f:function'
 let NERDChristmasTree=1
 let NERDTreeCaseSensitiveSort=1
 let NERDTreeChDirMode=2
-let NERDTreeBookmarksFile = "~/.vim_joelhy/NERDTreeBookmarks"
+let NERDTreeBookmarksFile = "~/.vim/NERDTreeBookmarks"
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
